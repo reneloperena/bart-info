@@ -1,0 +1,27 @@
+/* Empty. Add your own CSS if you like */
+
+.station-name {
+  color: #00585F;
+  text-align: left;
+}
+
+.right-arrow {
+  float: right;
+}
+
+.station-header {
+  font-size: 1.6em;
+  text-align: center;
+  background-color: #009393;
+  color: #FFF;
+  padding: 5px 0 5px 0;
+}
+
+@media screen and (max-width: 991px) {
+  .schedule {
+    padding: 10px;
+    border: 1px solid #eee;
+    margin: 10px;
+    border-radius: 10px;
+  } 
+}
