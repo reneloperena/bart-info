@@ -11,6 +11,10 @@
     "email": "rloperena@vuh.io",
     "url": "http://blog.vuh.io/"
   },
+  "contributors": [{
+    "name": "Jennie Kim Eldon",
+    "email": "jk@youhavetolearncomputers.com"
+  }],
   "homepage": "http://bart.vuh.io/",
   "repository": {
     "type": "git",
