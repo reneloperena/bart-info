@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html ng-app="bart">
+    
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/angular.min.js"></script>
+        <script src="js/bart.js"></script>
+    </head>
+    
+    <body ng-controller="stationController as sC">
+        <div class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand"><span>BartInfo</span></a>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="btn-group btn-group-lg">
+                            <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Station    <i class="fa fa-caret-down"></i></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li ng-repeat="station in stations">
+                                    <a ng-click="setCurrentStation(station)">{{station.name}}</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <h2>{{currentStation.name}}</h2>
+                    </div>
+                    <div class="col-md-4">
+                        <script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                        <!-- Bart -->
+                        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6225621195384582"
+                        data-ad-slot="6721692150" data-ad-format="auto"></ins>
+                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                    </div>
+                </div>
+                <div class="row" ng-repeat="destination in destinations">
+                    <hr>
+                    <div class="col-md-1">
+                        <i class="fa fa-3x fa-flip-horizontal fa-fw fa-train pull-left" style="color: {{destination.estimates[0].hexcolor}}; margin-top: 15px;"></i>
+                    </div>
+                    <div class="col-md-3 text-left">
+                        <h2 class="text-left">{{destination.station.name}}</h2>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class=" schedule col-md-2 text-center" ng-repeat="estimate in destination.estimates">
+                                <p ng-show='estimate.minutes.toLowerCase() !== "leaving"'>{{estimate.minutes}} Minutes</p>
+                                <p ng-show='estimate.minutes.toLowerCase() === "leaving"'>{{estimate.minutes}}</p>
+                                <p>{{estimate.length}}-Car</p>
+                                <p>Platform {{estimate.platform}}</p>
+                                <i ng-show='estimate.bikeflag === "1"' class="fa fa-2x fa-bicycle fa-fw text-primary"></i>
+                                <i ng-show='estimate.bikeflag !== "1"' class="fa fa-2x fa-bicycle fa-fw" style="color: #eee"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href='css/main.css'>
+
+    </body>
+
+</html>

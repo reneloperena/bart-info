@@ -1,0 +1,35 @@
+{
+  "name": "BartInfo",
+  "version": "1.0.0",
+  "description": "Provides real time Bart information using bart.gov api",
+  "keywords": [
+    "Bart",
+    "Node.js",
+  ],
+  "author": {
+    "name": "Rene Loperena",
+    "email": "rloperena@vuh.io",
+    "url": "http://blog.vuh.io/"
+  },
+  "homepage": "http://bart.vuh.io/",
+  "repository": {
+    "type": "git",
+  },
+  "engines": {
+    "node": ">= 0.6.0",
+    "npm": ">= 1.0.0"
+  },
+  "dependencies": {
+    "bluebird": "^2.9.34",
+    "body-parser": "^1.13.3",
+    "express": "^4.13.3",
+    "express-cors": "0.0.3",
+    "morgan": "^1.6.1",
+    "request": "^2.60.0",
+    "xml2js": "^0.4.9"
+  },
+  "devDependencies": {},
+  "bundleDependencies": [],
+  "private": true,
+  "main": "server.js"
+}
