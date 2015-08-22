@@ -2,24 +2,32 @@ var express = require('express');
 var router = express.Router();
 var Bart = require('../models/bart');
 var bodyParser = require('body-parser');
-var cors = require('express-cors')
+var cors = require('express-cors');
 
 module.exports = function(apiKey){
 
   var bart = new Bart(apiKey);
 
   // Middleware to add CORS headers
-  router.use(cors({
-    allowedOrigins: [
-        '*'
-    ]
-  }));
+  // router.use(cors({
+  //   allowedOrigins: [
+  //       '*'
+  //   ]
+  // }));
+  
+  router.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+  });
+
+  // accept CORS
 
   // Middleware to parse application/x-www-form-urlencoded
-  router.use(bodyParser.urlencoded({ extended: false }))
+  router.use(bodyParser.urlencoded({ extended: false }));
 
   // Middleware to parse application/json
-  router.use(bodyParser.json())
+  router.use(bodyParser.json());
 
   // getStations
   router.get('/', function(req, res) {
@@ -44,4 +52,4 @@ module.exports = function(apiKey){
   });
 
   return router;
-}
+};
