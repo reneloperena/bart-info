@@ -29,7 +29,6 @@
 
 .details-container {
   /*width: 100%;*/
-  background-color: yellow;
 }
 
 
@@ -47,7 +46,6 @@
 
 .train-list-container {
   /*width: 100%;*/
-  background-color: orange;
 }
 
 .green {
@@ -59,7 +57,7 @@
   background-color: red;
 }
 .train-icon {
-  background-color: blue;
+  background-color: white;
   padding-left: 10px;
   font-size: 30px;
   position: absolute;
@@ -71,6 +69,11 @@
 
 .destination .text {
   font-size: 1.25em;
+
+}
+
+.train-color-bar {
+  margin-left: 10px;
 }
 
 .estimate-container {

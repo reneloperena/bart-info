@@ -37,8 +37,9 @@
       </ion-header-bar>
 
     <ion-nav-view ng-controller="stationController"></ion-nav-view>
-    <ion-content>
 
+
+    <ion-content>
       <div class="station-container">
         <div class="station-header">
           <span class="station-header-text">Select Your Station</span>
@@ -53,18 +54,22 @@
         </div>
       </div> <!-- end of station-container -->
 
+      
+      <div class="details-container">
+
       <div class="details-header">
         <div class="current-station">Trains departing {{currentStation.name}}</div>
       </div>
 
-      <div class="details-container">
-
         <div class="train-list-container" ng-repeat="destination in destinations">
-          <div class="train-listing">
+        
+        <div class="row">
+          <div class="col">
             <div class="train-icon">
               <i class="icon ion-android-train" ng-class="trainClass" style="color: {{destination.estimates[0].hexcolor}}"></i>
             </div>
           </div>
+        </div>
 
 
         <div class="estimate-container">
@@ -73,31 +78,36 @@
           </div>
 
             
-          <div class="row green">
+          <!-- <div class="row"> -->
+          <ion-list>
+
               <div ng-repeat="estimate in destination.estimates">
-            <div class="col">
-                <p ng-show='estimate.minutes.toLowerCase() !== "leaving"'>{{estimate.minutes}} Minutes</p>
-                <p ng-show='estimate.minutes.toLowerCase() === "leaving"'>{{estimate.minutes}}</p>
+              <!-- <div class="col"> -->
+              <!-- <span> -->
+              <ion-item>
+              <div style="border-left: 10px solid {{destination.estimates[0].hexcolor}}">
+                <p  class="train-color-bar" ng-show='estimate.minutes.toLowerCase() !== "leaving"'>{{estimate.minutes}} Minutes | {{estimate.length}}-Car Train on Platform {{estimate.platform}}</p>
+                <p  class="train-color-bar" ng-show='estimate.minutes.toLowerCase() === "leaving"'>{{estimate.minutes}} - {{estimate.length}}-Car on Platform {{estimate.platform}}</p>
+                <!-- </span> -->
               </div>
-              <div class="col">
-                <p>{{estimate.length}}-Car on Platform {{estimate.platform}}</p>
+              </ion-item>
+              </ion-list>
               </div>
+            </div>
             </div>
               <!-- 
             <div class="col">
               </div> -->
                   <!-- <i ng-show='estimate.bikeflag === "1"' class="fa fa-2x fa-bicycle fa-fw text-primary"></i> -->
                   <!-- <i ng-show='estimate.bikeflag !== "1"' class="fa fa-2x fa-bicycle fa-fw" style="color: #eee"></i> -->
-          </div> <!-- end row --> 
+        
 
         </div><!-- /estimate container -->
-            2
+            
         </div> <!-- /train-list-container orange -->
 
       </div> <!-- /details-container yellow -->
 
-      </div>
-    </div>
 
       <div class="ads-container">
         <script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -109,6 +119,7 @@
 
     </ion-content>
     </ion-view>
+
     </body>
 
 </html>
