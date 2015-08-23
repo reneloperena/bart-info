@@ -1,4 +1,4 @@
-var app = angular.module('bart',['ionic']);
+var app = angular.module('bart',['ionic', 'ui.router']);
 
 app.run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -12,6 +12,23 @@ app.run(function($ionicPlatform) {
     }
   });
 });
+
+// app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+
+//   $urlRouterProvider.otherwise('/main');
+
+//   $stateProvider
+//     .state('main', {
+//       url : '/main',
+//       controller: 'stationController',
+//       templateUrl: 'views/main.html'
+//     });
+// }]);
+
+// .controller('MainCtrl', function($scope) {
+//   screen.unlockOrientation();
+// });
+
 
 
 app.factory('Stations', function($http){

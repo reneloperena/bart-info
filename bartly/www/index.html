@@ -7,11 +7,12 @@
 
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="client/styles/main.css">
+    <link href='http://fonts.googleapis.com/css?family=Josefin+Sans:400,700' rel='stylesheet' type='text/css'>
 
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
     <link href="css/ionic.app.css" rel="stylesheet">
     -->
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="client/lib/js/bootstrap.min.js"></script>
 
@@ -24,22 +25,19 @@
     <!-- your app's js -->
     <script src="client/app/bart.js"></script>
 
-
     <link href="client/lib/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="client/lib/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="client/styles/main.css">
 
   </head>
 
   <body ng-app="bart" ng-controller="stationController as sC">
-
     <ion-view>
-      <ion-header-bar class="bar-dark">
-        <h1 class="title">BARTly</h1>
+      <ion-header-bar class="bar-dark app-title">
+        <h1 class="title">Next BART</h1>
       </ion-header-bar>
 
+    <ion-nav-view ng-controller="stationController"></ion-nav-view>
     <ion-content>
-      <div ng-view></div>
 
       <div class="station-container">
         <div class="station-header">
@@ -55,61 +53,61 @@
         </div>
       </div> <!-- end of station-container -->
 
-        <div class="row">
-       <!--    <div class="col-md-4">
-            <div class="btn-group btn-group-lg">
-                <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Station    <i class="fa fa-caret-down"></i></a>
-                <ul class="dropdown-menu" role="menu">
-                    <li ng-repeat="station in stations">
-                      <a ng-click="setCurrentStation(station)">{{station.name}}</a>
-                    </li>
-                </ul>
-            </div>
-          </div> -->
+      <div class="details-header">
+        <div class="current-station">Trains departing {{currentStation.name}}</div>
+      </div>
 
-          <div class="col-md-4">
-              <h2>{{currentStation.name}}</h2>
+      <div class="details-container">
+
+        <div class="train-list-container" ng-repeat="destination in destinations">
+          <div class="train-listing">
+            <div class="train-icon">
+              <i class="icon ion-android-train" ng-class="trainClass" style="color: {{destination.estimates[0].hexcolor}}"></i>
+            </div>
           </div>
 
-          <div class="col-md-4">
-            <script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
-
-              <!-- Bart -->
-            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6225621195384582" data-ad-slot="6721692150" data-ad-format="auto"></ins>
-            <script>
-                  (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
+        <div class="estimate-container">
+          <div class="destination">
+            <h2 class="text">{{destination.station.name}}</h2>
           </div>
-        </div>
 
-        <div class="row" ng-repeat="destination in destinations">
-            <hr>
-            <div class="col-md-1">
-                <i class="fa fa-3x fa-flip-horizontal fa-fw fa-train pull-left" style="color: {{destination.estimates[0].hexcolor}}; margin-top: 15px;"></i>
+            
+          <div class="row green">
+              <div ng-repeat="estimate in destination.estimates">
+            <div class="col">
+                <p ng-show='estimate.minutes.toLowerCase() !== "leaving"'>{{estimate.minutes}} Minutes</p>
+                <p ng-show='estimate.minutes.toLowerCase() === "leaving"'>{{estimate.minutes}}</p>
+              </div>
+              <div class="col">
+                <p>{{estimate.length}}-Car on Platform {{estimate.platform}}</p>
+              </div>
+              <!-- 
+            <div class="col">
+              </div> -->
+                  <!-- <i ng-show='estimate.bikeflag === "1"' class="fa fa-2x fa-bicycle fa-fw text-primary"></i> -->
+                  <!-- <i ng-show='estimate.bikeflag !== "1"' class="fa fa-2x fa-bicycle fa-fw" style="color: #eee"></i> -->
             </div>
-            <div class="col-md-3 text-left">
-                <h2 class="text-left">{{destination.station.name}}</h2>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class=" schedule col-md-2 text-center" ng-repeat="estimate in destination.estimates">
-                        <p ng-show='estimate.minutes.toLowerCase() !== "leaving"'>{{estimate.minutes}} Minutes</p>
-                        <p ng-show='estimate.minutes.toLowerCase() === "leaving"'>{{estimate.minutes}}</p>
-                        <p>{{estimate.length}}-Car</p>
-                        <p>Platform {{estimate.platform}}</p>
-                        <i ng-show='estimate.bikeflag === "1"' class="fa fa-2x fa-bicycle fa-fw text-primary"></i>
-                        <i ng-show='estimate.bikeflag !== "1"' class="fa fa-2x fa-bicycle fa-fw" style="color: #eee"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
+          </div> <!-- end row --> 
+
+        </div><!-- /estimate container -->
+            
+        </div> <!-- /train-list-container orange -->
+
+      </div> <!-- /details-container yellow -->
 
       </div>
     </div>
 
+      <div class="ads-container">
+        <script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6225621195384582" data-ad-slot="6721692150" data-ad-format="auto"></ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div> <!-- end of ads-container -->
 
-        </ion-content>
+    </ion-content>
     </ion-view>
     </body>
 
