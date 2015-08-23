@@ -1,0 +1,90 @@
+/* Empty. Add your own CSS if you like */
+
+.app-title {
+  text-align: center;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 700;
+  font-size: 1.5em;
+}
+
+.station-name {
+  color: #00585F;
+  text-align: left;
+}
+
+.right-arrow {
+  float: right;
+}
+
+.station-header {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 700;
+
+  font-size: 1.6em;
+  text-align: center;
+  background-color: #009393;
+  color: #FFF;
+  padding: 5px 0 5px 0;
+}
+
+.details-container {
+  /*width: 100%;*/
+}
+
+
+.details-header {
+
+}
+
+.details-header .current-station {
+  font-size: 1.25em;
+}
+
+.details-body {
+
+}
+
+.train-list-container {
+  /*width: 100%;*/
+}
+
+.green {
+  background-color: green;
+  
+}
+
+.train-listing {
+  background-color: red;
+}
+.train-icon {
+  background-color: white;
+  padding-left: 10px;
+  font-size: 30px;
+  position: absolute;
+}
+
+.destination {
+  margin-left: 40px;
+}
+
+.destination .text {
+  font-size: 1.25em;
+
+}
+
+.train-color-bar {
+  margin-left: 10px;
+}
+
+.estimate-container {
+  /*width: 50%;*/
+}
+
+/*@media screen and (max-width: 991px) {
+  .schedule {
+    padding: 10px;
+    border: 1px solid #eee;
+    margin: 10px;
+    border-radius: 10px;
+  } */
+}

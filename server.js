@@ -19,8 +19,15 @@ var Application = function() {
     self.initializeServer = function() {
         self.app = express();
         self.app.use(morgan('combined'));
-        self.app.use('/api/stations', require('./src/controllers/stations')(apiKey))
+        self.app.use('/api/stations', require('./src/controllers/stations')(apiKey));
         self.app.use(express.static('client'));
+
+        self.app.use(function(req, res, next) {
+          res.header("Access-Control-Allow-Origin", "*");
+          res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+          next();
+        });
+
         
     };
 
@@ -33,13 +40,14 @@ var Application = function() {
     self.start = function() {
         self.app.listen(self.port, self.ipaddress, function() {
             console.log('%s: Node server started on %s:%d ...',
-                        Date(Date.now() ), self.ipaddress, self.port);
+                Date(Date.now() ), self.ipaddress, self.port);
         });
     };
 
 };  
 
 var app = new Application();
+
 app.initialize();
 app.start();
 
