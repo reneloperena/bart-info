@@ -12,7 +12,7 @@ services.factory('Stations', function($http) {
   return { getAll:getAll, getSchedules:getSchedules};
 });
 
-services.factory('StateFactory', function() {
+services.factory('States', function() {
   var currentStation = null;
   var setCurrentStation = function(station) {
     currentStation = station;

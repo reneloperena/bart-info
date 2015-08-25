@@ -19,7 +19,7 @@ app.config( function($stateProvider, $urlRouterProvider) {
 
   $stateProvider
     .state('stationList', {
-      url : '/',
+      url : '/stationList',
       controller: 'listController',
       templateUrl: 'client/app/main/stationList.html'
     })
