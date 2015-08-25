@@ -1,0 +1,24 @@
+<ion-view view-title="BARTly">
+  <ion-nav-bar class="station-header">
+  <div>
+    <p>BARTly</p>
+    <p>Select Your Station</p>
+  </div>
+  </ion-nav-bar>
+
+  <ion-content>
+
+    <div class="station-container">
+        <div class="station-body">
+          <ion-list>
+            <ion-item id="station-name" ng-repeat="station in stations">
+              <a class="station-name" ng-click="setCurrentStation(station)">{{station.name}} </a>
+              <a ng-click="setCurrentStation(station)" class="right-arrow icon ion-chevron-right"></a>
+            </ion-item>
+          </ion-list>
+        </div>
+      </div> <!-- end of station-container -->
+
+  </ion-content>
+</ion-view>
+ 
