@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="bart">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
@@ -23,103 +23,28 @@
     <script src="cordova.js"></script>
 
     <!-- your app's js -->
-    <script src="client/app/bart.js"></script>
+    <script src="client/app/main/stationList.js"></script>
+    <script src="client/app/main/navbar.js"></script>
+    <script src="client/app/services/services.js"></script>
+    <script src="client/app/details/details.js"></script>
+    <script src="client/app/app.js"></script>
+
 
     <link href="client/lib/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="client/lib/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 
   </head>
 
-  <body ng-app="bart" ng-controller="stationController as sC">
-    <ion-view>
-      <ion-header-bar class="bar-dark app-title">
-        <h1 class="title">Next BART</h1>
-      </ion-header-bar>
+  <body>
 
-    <ion-nav-view ng-controller="stationController"></ion-nav-view>
+    <title-bar></title-bar>
+      <ion-view>
+      <ion-content>
+      <!-- <div ng-controller="mainController"> -->
+      <!-- </div> -->
+      </ion-content>
+      </ion-view>
 
-
-    <ion-content>
-      <div class="station-container">
-        <div class="station-header">
-          <span class="station-header-text">Select Your Station</span>
-        </div>
-        <div class="station-body">
-          <ion-list>
-            <ion-item ng-repeat="station in stations">
-              <a class="station-name" ng-click="setCurrentStation(station)">{{station.name}} </a>
-              <a ng-click="setCurrentStation(station)" class="right-arrow icon ion-chevron-right"></a>
-            </ion-item>
-          </ion-list>
-        </div>
-      </div> <!-- end of station-container -->
-
-      
-      <div class="details-container">
-
-      <div class="details-header">
-        <div class="current-station">Trains departing {{currentStation.name}}</div>
-      </div>
-
-        <div class="train-list-container" ng-repeat="destination in destinations">
-        
-        <div class="row">
-          <div class="col">
-            <div class="train-icon">
-              <i class="icon ion-android-train" ng-class="trainClass" style="color: {{destination.estimates[0].hexcolor}}"></i>
-            </div>
-          </div>
-        </div>
-
-
-        <div class="estimate-container">
-          <div class="destination">
-            <h2 class="text">{{destination.station.name}}</h2>
-          </div>
-
-            
-          <!-- <div class="row"> -->
-          <ion-list>
-
-              <div ng-repeat="estimate in destination.estimates">
-              <!-- <div class="col"> -->
-              <!-- <span> -->
-              <ion-item>
-              <div style="border-left: 10px solid {{destination.estimates[0].hexcolor}}">
-                <p  class="train-color-bar" ng-show='estimate.minutes.toLowerCase() !== "leaving"'>{{estimate.minutes}} Minutes | {{estimate.length}}-Car Train on Platform {{estimate.platform}}</p>
-                <p  class="train-color-bar" ng-show='estimate.minutes.toLowerCase() === "leaving"'>{{estimate.minutes}} - {{estimate.length}}-Car on Platform {{estimate.platform}}</p>
-                <!-- </span> -->
-              </div>
-              </ion-item>
-              </ion-list>
-              </div>
-            </div>
-            </div>
-              <!-- 
-            <div class="col">
-              </div> -->
-                  <!-- <i ng-show='estimate.bikeflag === "1"' class="fa fa-2x fa-bicycle fa-fw text-primary"></i> -->
-                  <!-- <i ng-show='estimate.bikeflag !== "1"' class="fa fa-2x fa-bicycle fa-fw" style="color: #eee"></i> -->
-        
-
-        </div><!-- /estimate container -->
-            
-        </div> <!-- /train-list-container orange -->
-
-      </div> <!-- /details-container yellow -->
-
-
-      <div class="ads-container">
-        <script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6225621195384582" data-ad-slot="6721692150" data-ad-format="auto"></ins>
-        <script>
-          (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-      </div> <!-- end of ads-container -->
-
-    </ion-content>
-    </ion-view>
-
-    </body>
+  </body>
 
 </html>

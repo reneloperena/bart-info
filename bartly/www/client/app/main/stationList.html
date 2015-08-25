@@ -1,0 +1,20 @@
+<!-- <ion-view view-title="Select Your Station"> -->
+  <!-- <ion-content> -->
+
+    <div class="station-container">
+        <div class="station-header">
+          <span class="station-header-text">Select Your Station</span>
+        </div>
+        <div class="station-body">
+          <ion-list>
+            <ion-item ng-repeat="station in stations">
+              <a class="station-name" ng-click="setCurrentStation(station)">{{station.name}} </a>
+              <a ng-click="setCurrentStation(station)" class="right-arrow icon ion-chevron-right"></a>
+            </ion-item>
+          </ion-list>
+        </div>
+      </div> <!-- end of station-container -->
+
+  <!-- </ion-content> -->
+<!-- </ion-view> -->
+ 
