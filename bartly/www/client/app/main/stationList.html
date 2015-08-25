@@ -1,10 +1,13 @@
 <ion-view view-title="Select Your Station">
+  <ion-nav-bar class="station-header">
+  <div>
+    <span class="station-header-text">Select Your Station</span>
+  </div>
+  </ion-nav-bar>
+
   <ion-content>
 
     <div class="station-container">
-        <div class="station-header">
-          <span class="station-header-text">Select Your Station</span>
-        </div>
         <div class="station-body">
           <ion-list>
             <ion-item ng-repeat="station in stations">
