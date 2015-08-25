@@ -4,16 +4,20 @@
   "description": "Provides real time Bart information using bart.gov api",
   "keywords": [
     "Bart",
-    "Node.js",
+    "Node.js"
   ],
   "author": {
     "name": "Rene Loperena",
     "email": "rloperena@vuh.io",
     "url": "http://blog.vuh.io/"
   },
+  "contributors": [{
+    "name": "Jennie Kim Eldon",
+    "email": "jk@youhavetolearncomputers.com"
+  }],
   "homepage": "http://bart.vuh.io/",
   "repository": {
-    "type": "git",
+    "type": "git"
   },
   "engines": {
     "node": ">= 0.6.0",

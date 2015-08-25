@@ -1,0 +1,8 @@
+@media screen and (max-width: 991px) {
+  .schedule {
+    padding: 10px;
+    border: 1px solid #eee;
+    margin: 10px;
+    border-radius: 10px;
+  } 
+}
