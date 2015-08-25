@@ -1,5 +1,3 @@
-// for the station list view that the user sees at the beginning 
-
 var list = angular.module('stations', ['bartServices']);
 
 list.controller('listController', function(Stations, States, $scope, $location) {
