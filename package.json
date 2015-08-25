@@ -11,10 +11,12 @@
     "email": "rloperena@vuh.io",
     "url": "http://blog.vuh.io/"
   },
-  "contributors": [{
-    "name": "Jennie Kim Eldon",
-    "email": "jk@youhavetolearncomputers.com"
-  }],
+  "contributors": [
+    {
+      "name": "Jennie Kim Eldon",
+      "email": "jk@youhavetolearncomputers.com"
+    }
+  ],
   "homepage": "http://bart.vuh.io/",
   "repository": {
     "type": "git"
@@ -26,6 +28,7 @@
   "dependencies": {
     "bluebird": "^2.9.34",
     "body-parser": "^1.13.3",
+    "cors": "^2.7.1",
     "express": "^4.13.3",
     "express-cors": "0.0.3",
     "morgan": "^1.6.1",
