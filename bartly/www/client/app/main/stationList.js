@@ -7,9 +7,7 @@ list.controller('listController', function(Stations, States, $scope, $location) 
   $scope.stations = [];
  
   Stations.getAll().then(function(res) {
-    console.log("inside getAll");
     $scope.stations = res.data;
-    console.log(res);
   });
 
   $scope.setCurrentStation = function(station){

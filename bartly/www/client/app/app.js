@@ -30,7 +30,7 @@ app.config( function($stateProvider, $urlRouterProvider) {
     });
 });
 
-// app.controller( 'mainController', function($scope) {
-//   screen.unlockOrientation();
-// });
+app.controller( 'mainController', function($scope) {
+  screen.unlockOrientation();
+});
 
