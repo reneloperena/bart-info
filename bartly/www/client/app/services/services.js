@@ -15,11 +15,9 @@ services.factory('Stations', function($http) {
 services.factory('States', function() {
   var currentStation = null;
   var setCurrentStation = function(station) {
-    console.log(station);
     currentStation = station;
   };
   var getCurrentStation = function() {
-    console.log(currentStation);
     return currentStation;
   };
   return { setCurrentStation: setCurrentStation, getCurrentStation: getCurrentStation };
