@@ -7,7 +7,11 @@
   </ion-nav-bar>
 
   <ion-content>
+    <ion-refresher
+      pulling-text="Pull to refresh..."
+      on-refresh="loadStationList()">
 
+    </ion-refresher>
     <div class="station-container">
         <div class="station-body">
           <ion-list>
