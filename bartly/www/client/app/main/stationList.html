@@ -16,12 +16,14 @@
         <div class="station-body">
           <ion-list>
             <ion-item id="station-name" ng-repeat="station in stations">
-              <a class="station-name" ng-click="setCurrentStation(station)">{{station.name}} </a>
-              <a ng-click="setCurrentStation(station)" class="right-arrow icon ion-chevron-right"></a>
+            <div ng-click="setCurrentStation(station)">
+              <a class="station-name">{{station.name}} </a>
+              <a class="right-arrow icon ion-chevron-right"></a>
+              </div>
             </ion-item>
           </ion-list>
         </div>
-      </div> <!-- end of station-container -->
+      </div> <!-- /station-container -->
 
   </ion-content>
 </ion-view>
