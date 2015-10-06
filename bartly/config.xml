@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="com.ionicframework.bartly291696" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-  <name>bartly</name>
+<widget id="io.vuh.bartly" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+  <name>Bartly</name>
   <description>&#xD;
-        An Ionic Framework and Cordova project.&#xD;
+        Get real-time departure info in a flash, and never miss your train again!&#xD;
     </description>
-  <author email="hi@ionicframework" href="http://ionicframework.com/">&#xD;
-      Ionic Framework Team&#xD;
+  <author email="rene@vuh.io" href="bart.vuh.io">&#xD;
+      Rene Loperena&#xD;
     </author>
   <content src="index.html"/>
   <access origin="*"/>
@@ -19,6 +19,7 @@
   <feature name="StatusBar">
     <param name="ios-package" value="CDVStatusBar" onload="true"/>
   </feature>
+  <allow-navigation href="http://api.bart.gov/api/*" />
   <platform name="android">
     <icon src="resources/android/icon/drawable-ldpi-icon.png" density="ldpi"/>
     <icon src="resources/android/icon/drawable-mdpi-icon.png" density="mdpi"/>
