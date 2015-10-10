@@ -20,15 +20,17 @@ details.controller('detailsController', function($scope, States, Stations) {
 
         for (var x = 0; x < xmlDestinations[i].estimate.length; x++) {
           //Creates estimates for following trains
-          var estimate = {
-            minutes: xmlDestinations[i].estimate[x].minutes,
-            platform: xmlDestinations[i].estimate[x].platform,
-            length: xmlDestinations[i].estimate[x].length,
-            color: xmlDestinations[i].estimate[x].color,
-            hexcolor: xmlDestinations[i].estimate[x].hexcolor,
-            bikeflag: xmlDestinations[i].estimate[x].bikeflag
-          };
-          destination.estimates.push(estimate);
+          if(xmlDestinations[i].estimate[x]){
+            var estimate = {
+              minutes: xmlDestinations[i].estimate[x].minutes,
+              platform: xmlDestinations[i].estimate[x].platform,
+              length: xmlDestinations[i].estimate[x].length,
+              color: xmlDestinations[i].estimate[x].color,
+              hexcolor: xmlDestinations[i].estimate[x].hexcolor,
+              bikeflag: xmlDestinations[i].estimate[x].bikeflag
+            };
+            destination.estimates.push(estimate);
+          }
         };
         destinations.push(destination);
       };

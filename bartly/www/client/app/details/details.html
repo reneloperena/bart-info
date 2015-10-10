@@ -1,23 +1,23 @@
 <ion-view>
-  <ion-nav-bar class="station-header">
-    <ion-nav-back-button class="back-button">
-    </ion-nav-back-button>
-  </ion-nav-bar>
+<ion-nav-bar class="station-header">
+<ion-nav-back-button class="back-button">
+</ion-nav-back-button>
+</ion-nav-bar>
 
 <ion-content>
 
-  <ion-refresher
-    pulling-text="Pull to refresh..."
-    on-refresh="loadSchedules()">
-  </ion-refresher>
+<ion-refresher
+pulling-text="Pull to refresh..."
+on-refresh="loadSchedules()">
+</ion-refresher>
 
-  <div class="details-container">
+<div class="details-container">
 
-    <div class="details-header">
-      <div class="current-station">Trains departing {{currentStation.name}}</div>
-    </div>
+  <div class="details-header">
+    <div class="current-station">Trains departing {{currentStation.name}}</div>
+  </div>
 
-    <div class="train-list-container" ng-repeat="destination in destinations">
+  <div class="train-list-container" ng-repeat="destination in destinations">
     
     <div class="row destination">
       <div>
@@ -32,32 +32,19 @@
     </div>
 
     <div class="estimate-container">
-        
+      
       <ion-list>
-        <div ng-repeat="estimate in destination.estimates">
-    
-        <ion-item id="train-item">
-          <div style="border-left: 10px solid {{estimate.hexcolor}}">
-            <p class="train-color-bar" ng-show='estimate.minutes.toLowerCase() !== "leaving"'>{{estimate.minutes}} Minutes | {{estimate.length}}-Car Train on Platform {{estimate.platform}}</p>
-            <p class="train-color-bar" ng-show='estimate.minutes.toLowerCase() === "leaving"'>{{estimate.minutes}} - {{estimate.length}}-Car on Platform {{estimate.platform}}</p>
-          </div>
-        </ion-item>
-      </ion-list>
-
-              <!-- </div> -->
-            <!-- </div> -->
-        <!-- </div> -->
-              <!-- 
-            <div class="col">
-              </div> -->
-                  <!-- <i ng-show='estimate.bikeflag === "1"' class="fa fa-2x fa-bicycle fa-fw text-primary"></i> -->
-                  <!-- <i ng-show='estimate.bikeflag !== "1"' class="fa fa-2x fa-bicycle fa-fw" style="color: #eee"></i> -->
+      <div ng-repeat="estimate in destination.estimates">
         
-      </div><!-- /estimate container -->
-            
-    </div> <!-- /train-list-container orange -->
-
-  </div> <!-- /details-container yellow -->
-
-</ion-view>
+        <ion-item id="train-item">
+        <div style="border-left: 10px solid {{estimate.hexcolor}}">
+          <p class="train-color-bar" ng-show='estimate.minutes.toLowerCase() !== "leaving"'>{{estimate.minutes}} Minutes | {{estimate.length}}-Car Train on Platform {{estimate.platform}}</p>
+          <p class="train-color-bar" ng-show='estimate.minutes.toLowerCase() === "leaving"'>{{estimate.minutes}} - {{estimate.length}}-Car on Platform {{estimate.platform}}</p>
+        </div>
+      </ion-item>
+    </ion-list>  
+  </div><!-- /estimate container -->        
+</div> <!-- /train-list-container orange -->
+</div> <!-- /details-container yellow -->
 </ion-content>
+</ion-view>
